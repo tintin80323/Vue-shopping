@@ -9,8 +9,10 @@ import currencyFilter from './filter/currency'
 import Loading from 'vue-loading-overlay';
 import Vuex from 'vuex'
 
+
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'bootstrap';
+
 
 
 //插件
@@ -21,6 +23,8 @@ import VueI18n from 'vue-i18n'
 
 axios.defaults.withCredentials = true;
 Vue.config.productionTip = false;
+
+
 Vue.use(VueAwesomeSwiper);
 Vue.use(VueAxios, axios);
 Vue.use(Vuex)

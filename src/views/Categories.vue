@@ -38,11 +38,19 @@
           >
             Set
           </button>
+
+          <button
+            href="#"
+            class="list-group-item list-group-item-action"
+            @click="categories = 'LEGO'"
+          >
+            LEGO
+          </button>
         </div>
       </div>
       <div class="col-md-10">
         <div
-          class="card mb-3 mr-3"
+          class="card mb-3  col-md-4"
           v-for="product in filterData"
           :key="product.id"
         >
@@ -68,7 +76,7 @@
                 >Orignal Price {{ product.origin_price }}</del
               >
               <div class="h5 text-primary" v-if="product.price">
-                Only ${{ product.price }} Now
+                Only${{ product.price }}Now
               </div>
             </div>
 
@@ -89,8 +97,14 @@
             </div>
           </div>
         </div>
+        <div class="clearfix"></div> 
+        <Pagination></Pagination>  
+             
       </div>
+      
+      
     </div>
+    
     <car></car>
     <Footer></Footer>
   </div>
@@ -98,26 +112,26 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import slide from "@/components/slide.vue";
-import car from "@/components/car.vue";
+import car from "@/components/Car.vue";
 import Footer from "@/components/Footer.vue";
+import Pagination from "@/components/Pagination.vue";
 
 export default {
   data() {
-    return {     
-      categories: "所有商品",
+    return {
+      categories: "所有商品"
     };
   },
 
   methods: {
     getProducts(page = 1) {
-      let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products?page=${page}`;       
-      this.$store.dispatch('getProducts',api);
+      let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/products?page=${page}`;
+      this.$store.dispatch("getProducts", api);
     },
     addToCart(id, title, qty = 1) {
-      this.$store.dispatch('addToCart',{id,qty})
+      this.$store.dispatch("addToCart", { id, qty });
     }
   },
-
 
   computed: {
     filterData() {
@@ -130,11 +144,11 @@ export default {
         );
       }
     },
-    products(){
+    products() {
       return this.$store.state.products;
     },
-    cart(){
-      return this.$store.state.cart
+    cart() {
+      return this.$store.state.cart;
     }
   },
 
@@ -142,7 +156,8 @@ export default {
     Navbar,
     slide,
     Footer,
-    car
+    car,
+    Pagination
   },
 
   created() {

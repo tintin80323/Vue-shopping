@@ -13,7 +13,7 @@
 import Navbar from '@/components/Navbar.vue'
 import slide from '@/components/slide.vue'
 import Product from '@/components/Product.vue'
-import car from '@/components/car.vue'
+import car from '@/components/Car.vue'
 import Footer from '@/components/Footer.vue';
 
 export default {

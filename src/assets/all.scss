@@ -4,15 +4,6 @@
 @import './dashboard';
 // @import './style.scss';
 * {
-    font-family: 'MrsEavesRoman';
-}
-
-@font-face {
-    font-family: "MrsEavesRoman";
-    src: url('/src/assets/MrsEavesRoman.otf');
-}
-
-@font-face {
-    font-family: "MrsEavesRomanRegular";
-    src: url('/src/assets/MrsEavesRomanRegular.otf');
+    font-family: 'Spectral', serif;
+    ;
 }

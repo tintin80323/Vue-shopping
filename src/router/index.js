@@ -7,9 +7,11 @@ import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Products from '../components/Products.vue'
 import Coupon from '../views/Coupon.vue'
-import checkout from '../views/checkout.vue'
+import checkout from '../views/Checkout.vue'
 import CustomerCheckout from '../views/CustomerCheckout.vue'
 import Orderlist from '../views/Orderlist.vue'
+import CustomerCoupon from '../views/CustomCoupon.vue';
+
 
 Vue.use(VueRouter)
 
@@ -49,6 +51,11 @@ export default new VueRouter({
             path: '/customer_checkout/:orderId',
             name: 'CustomerCheckout',
             component: CustomerCheckout,
+        },
+        {
+            path: '/CustomCoupon',
+            name: 'CustomerCoupon',
+            component: CustomerCoupon,
         },
         {
             path: '/admin',

@@ -1,10 +1,5 @@
 <template>
   <div>
-    <loading :active.sync="isLoading" :is-full-page="true">
-      <template slot="default">
-        <img src="../assets/img/AS000712_01.gif" />
-      </template>
-    </loading>
     <Navbar></Navbar>
     <div class="container mx-auto">
       <img class="banner-img" src="../assets/img/Collection-Banner-Frozen-D.gif" />
@@ -13,7 +8,7 @@
           <img :src="product.imageUrl" class="w-100" alt />
         </div>
         <div class="col-md-6 mb-5 mt-5">
-          <div class="sticky-top" style="top: 10px;">
+          <div style="top: 10px;">
             <h3 class="text-primary font-weight-bold">{{ product.title }}</h3>
             <div class="d-flex my-3 align-items-end justify-content-end">
               <del class="text-muted">Orignal Price {{ product.origin_price }}$</del>
@@ -42,14 +37,14 @@
             </div>
           </div>
 
-          <div class="alert alert-light mt-4" role="alert">
+          <div class="alert-light mt-4 " role="alert">
             <h2>Product Content</h2>
             <p class="h5">{{ product.description }}</p>
           </div>
         </div>
       </div>
     </div>
-    <car></car>
+    <Car></Car>
     <Footer></Footer>
   </div>
 </template>
@@ -57,7 +52,7 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import Footer from "@/components/Footer.vue";
-import car from "@/components/car.vue";
+import Car from "@/components/Car.vue";
 
 export default {
   name: "categories",
@@ -100,7 +95,7 @@ export default {
   components: {
     Navbar,
     Footer,
-    car
+    Car
   },
 
   created() {

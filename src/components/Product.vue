@@ -45,44 +45,22 @@
       <!-- slides -->
       <swiper-slide v-for="product in products" :key="product.id">
         <div class="card">
-          <div
-            style="height: 200px; background-size: cover; background-position: center"
-            :style="{ backgroundImage: `url(${product.imageUrl})` }"
-          ></div>
+          <div style="height: 200px; background-size: cover; background-position: center" :style="{ backgroundImage: `url(${product.imageUrl})` }"></div>
           <div class="card-body">
-            <h5 class="card-title text-center text-secondary font-weight-bold">
-              {{ product.category }}
-            </h5>
+            <h5 class="card-title text-center text-secondary font-weight-bold">{{ product.category }}</h5>
             <p class="card-text text-center text-primary">
               {{ product.title }}
             </p>
 
             <div class="d-flex justify-content-between align-items-baseline">
-              <div class="h5 text-primary" v-if="!product.price">
-                $ {{ product.origin_price }}
-              </div>
-              <del class="h6 text-primary" v-if="product.price"
-                >origin price ${{ product.origin_price }}</del
-              >
-              <div class="h5 w-100 text-primary" v-if="product.price">
-                Only ${{ product.price }} Now
-              </div>
+              <div class="h5 text-primary" v-if="!product.price">${{ product.origin_price }}</div>
+              <del class="h6 text-primary" v-if="product.price">origin price ${{ product.origin_price }}</del>
+              <div class="h5 w-100 text-primary" v-if="product.price">Only ${{ product.price }} Now</div>
             </div>
 
             <div class="cardbuyer d-flex flex-column">
-              <router-link
-                :to="`/categories/${product.id}`"
-                class="w-100 bg-light text-primary text-center mt-1"
-                >Detailed</router-link
-              >
-              <button
-                type="button"
-                class="w-100 bg-light text-primary text-center mt-1"
-                @click="addToCart(product.id, product.title)"
-              >
-                addCart
-                <i class="fas fa-arrow-right"></i>
-              </button>
+              <router-link :to="`/categories/${product.id}`" class="w-100 bg-light text-primary text-center mt-1" >Detailed</router-link>
+              <button type="button" class="w-100 bg-light text-primary text-center mt-1" @click="addToCart(product.id, product.title)"> addCart<i class="fas fa-arrow-right"></i></button>
             </div>
           </div>
         </div>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import loading from "../src/components/loading"
+import loading from "../src/components/Loading"
 export default {
   components: {
    loading,
@@ -20,4 +20,7 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/all";
+
+
+
 </style>

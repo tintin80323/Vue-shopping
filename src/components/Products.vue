@@ -35,10 +35,7 @@
             <button class="btn btn-outline-primary btn-sm "  @click="openDelProductModal(item)" >
               刪除
             </button>
-            <button
-              class="btn btn-outline-primary btn-sm"
-              @click="openModal(false, item)"
-            >
+            <button class="btn btn-outline-primary btn-sm" @click="openModal(false, item)" >
               編輯
             </button>
           </td>
@@ -49,33 +46,15 @@
     <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item" :class="{ disable: !pagination.has_pre }">
-          <a
-            class="page-link"
-            href="#"
-            aria-label="Previous"
-            @click.prevent="getProducts(pagination.current_page - 1)"
-          >
+          <a class="page-link" href="#" aria-label="Previous" @click.prevent="getProducts(pagination.current_page - 1)">
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li
-          class="page-item"
-          v-for="page in pagination.total_pages"
-          :key="page"
-          :class="{ active: pagination.current_page === page }"
-        >
-          <a class="page-link" href="#" @click.prevent="getProducts(page)">{{
-            page
-          }}</a>
+        <li class="page-item" v-for="page in pagination.total_pages" :key="page" :class="{ active: pagination.current_page === page }">
+          <a class="page-link" href="#" @click.prevent="getProducts(page)">{{page}}</a>
         </li>
-
         <li class="page-item" :class="{ disable: !pagination.has_next }">
-          <a
-            class="page-link"
-            href="#"
-            aria-label="Next"
-            @click.prevent="getProducts(pagination.current_page + 1)"
-          >
+          <a class="page-link" href="#" aria-label="Next" @click.prevent="getProducts(pagination.current_page + 1)">
             <span aria-hidden="true">&raquo;</span>
           </a>
         </li>
@@ -84,24 +63,12 @@
 
     <!-----MODAL--->
 
-    <div
-      class="modal fade"
-      id="productModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">新增產品</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -110,36 +77,16 @@
               <div class="col-sm-4">
                 <div class="form-group">
                   <label for="image">輸入圖片網址</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="image"
-                    v-model="tempProduct.imageUrl"
-                    placeholder="請輸入圖片連結"
-                  />
+                  <input type="text" class="form-control" id="image" v-model="tempProduct.imageUrl" placeholder="請輸入圖片連結" />
                 </div>
                 <div class="form-group">
                   <label for="customFile">
                     或 上傳圖片
-                    <i
-                      class="fas fa-spinner fa-spin"
-                      v-if="status.fileUploading"
-                    ></i>
+                    <i class="fas fa-spinner fa-spin" v-if="status.fileUploading"></i>
                   </label>
-                  <input
-                    type="file"
-                    id="customFile"
-                    class="form-control"
-                    ref="files"
-                    @change="uploadFile"
-                  />
+                  <input type="file" id="customFile" class="form-control" ref="files" @change="uploadFile"/>
                 </div>
-                <img
-                  img="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=828346ed697837ce808cae68d3ddc3cf&auto=format&fit=crop&w=1350&q=80"
-                  class="img-fluid"
-                  :src="tempProduct.imageUrl"
-                  alt
-                />
+                <img img="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=828346ed697837ce808cae68d3ddc3cf&auto=format&fit=crop&w=1350&q=80" class="img-fluid" :src="tempProduct.imageUrl" alt  />
               </div>
               <div class="col-sm-8">
                 <div class="form-group">

@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="container">
+    <div class="container mt-5">
       <div class="col-md-4 mx-auto border border-primary rounded-lg">
         <form class="form-signin" @submit.prevent="signin">
           <div class="mb-4 text-center"><img           
@@ -69,10 +69,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.container{
-    position: fixed;
-    top:20%;
-    left: 20%;
-}
+<style lang="scss" >
+
 </style>
