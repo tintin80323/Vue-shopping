@@ -1,4 +1,4 @@
-# vue-gg
+# vue出一個電商網站
 
 ## Project setup
 ```
